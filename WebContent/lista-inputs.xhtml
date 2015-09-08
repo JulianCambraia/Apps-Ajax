@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:composition template="/index.xhtml">
+		<ui:define name="container">
+			<h:form id="frmIn">
+				<ui:repeat var="campo" value="#{inputsAjaxBean.campos}">
+					Nome: #{campo.nome}
+					Senha: #{campo.senha}
+				</ui:repeat>
+			</h:form>	
+		</ui:define>
+	</ui:composition>
+</html>
