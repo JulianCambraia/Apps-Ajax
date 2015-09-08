@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:composition template="/index.xhtml">
+		<ui:define name="container">
+			<h:form id="frmInputs">
+				<fieldset>
+					<legend>Campos</legend>
+					<h:panelGrid columns="2">
+						<f:ajax>
+							<h:outputLabel value="Nome:" for="campo-nome"/>
+							<h:inputText value="#{inputsAjaxBean.input.nome}" id="campo-nome" size="60"/>
+							
+							<h:outputLabel value="Senha:" for="campo-senha" />
+							<h:inputSecret value="#{inputsAjaxBean.input.senha}" id="campo-senha" size="12" />
+							<h:commandButton action="#{inputsAjaxBean.enviar}" value="Enviar" />
+							<h:commandButton action="#{inputsAjaxBean.limpar}" value="limpar" />
+						</f:ajax>
+					</h:panelGrid>	
+				</fieldset>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</html>
